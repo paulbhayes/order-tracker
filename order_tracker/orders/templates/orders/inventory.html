@@ -1,0 +1,12 @@
+{% if inventory %}
+	<table>
+	{% for item in inventory.inventoryitem_set.all %}
+		<tr>
+			<td>{{ item.component.name }}</td>
+			<td>{{ item.number }}</td>
+		</tr>
+	{% endfor %}
+	</table>
+{% else %}
+	<p>No Inventory available</p>
+{% endif %}
